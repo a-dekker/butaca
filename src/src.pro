@@ -153,6 +153,12 @@ exists("/usr/include/sailfishapp/sailfishapp.h"): {
 include(deployment.pri)
 qtcAddDeployment()
 
+translate_hack {
+	SOURCES+= \
+		qml/*.qml \
+		qml/sailfish/*.qml
+}
+
 
 ## Translations
 
