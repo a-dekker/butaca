@@ -67,17 +67,29 @@ unix {
     } else:exists("/usr/include/sailfishapp/sailfishapp.h") {
         desktopfile.files = $${TARGET}.desktop
         desktopfile.path = /usr/share/applications
-        icon.files = ../data/$${TARGET}.png
-        icon.path = /usr/share/icons/hicolor/86x86/apps
+        icon86.files += ../data/icons/86x86/$${TARGET}.png
+        icon86.path = /usr/share/icons/hicolor/86x86/apps
+        icon108.files += ../data/icons/108x108/$${TARGET}.png
+        icon108.path = /usr/share/icons/hicolor/108x108/apps
+        icon128.files += ../data/icons/128x128/$${TARGET}.png
+        icon128.path = /usr/share/icons/hicolor/128x128/apps
+        icon172.files += ../data/icons/172x172/$${TARGET}.png
+        icon172.path = /usr/share/icons/hicolor/172x172/apps
     }
 
     target.path = $${installPrefix}/bin
-    export(icon.files)
-    export(icon.path)
+    export(icon86.files)
+    export(icon108.files)
+    export(icon128.files)
+    export(icon172.files)
+    export(icon86.path)
+    export(icon108.path)
+    export(icon128.path)
+    export(icon172.path)
     export(desktopfile.files)
     export(desktopfile.path)
     export(target.path)
-    INSTALLS += desktopfile icon target
+    INSTALLS += desktopfile icon86 icon108 icon128 icon172 target
 }
 
 export (ICON)
